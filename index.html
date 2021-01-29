@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Etch-a-Sketch</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+</head>
+
+<body>
+  <div  class = "container">
+
+      <h1>
+        Etch a Sketch
+      </h1>
+      
+        
+      
+      <div id = "cssGrid" class = "sketch-box">
+      </div>
+
+
+      <div class = slidecontainer>
+         
+        <input type="range" min="2" max="16" value="8" class="slider" id="myRange">
+        <p>Value: <span id="demo"></span></p>
+      </div>
+
+      <div class = "sketch-buttons">
+
+        <button type="button" id = "resetBtn" class = "myButton">Reset Square</button> 
+        <button type="button" id = "rndColorBtn" class = "myButton">Random Colors</button> 
+        
+        <input type="color" id="colorpicker" value="#0000ff"  class = "myButton"> </input>
+        
+      </div>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

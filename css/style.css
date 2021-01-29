@@ -1,0 +1,161 @@
+/* https://meyerweb.com/eric/tools/css/reset/ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+
+/*SLIDER CSS*/
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 25%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-top: 10px;
+  margin-left: 37.5%;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+/*SLIDER END*/
+
+.sketch-box{
+  
+    height: 400px;
+    width: 400px;
+    display: grid;
+    align-items: stretch;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    
+   
+}
+
+p{
+  margin-top: 10px;
+  margin-left: 37.5%;
+  
+}
+
+.box{
+    border: rgb(204, 202, 202);
+    border-width: 0.01ex;
+    border-style: solid;
+}
+
+.box:hover {
+  box-shadow:inset 5px 5px 5px 5px #f1efef;
+	background:linear-gradient(to bottom, #bebbbb 5%, #ffffff 100%);
+  
+  text-shadow:0px 1px 0px #ffffff;
+}
+
+h1{
+  
+  font-size: 45px;
+  margin-left: 41.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* buttons */
+
+.sketch-buttons{
+  margin-left: 37.7%;
+  position: relative;
+  margin-top: 10px;
+  
+}
+
+
+
+
+#colorpicker{
+  position: relative;
+  top: 5px;
+  height: 35px;
+  width: 70px;
+  padding:5px 19px;
+}
+
+
+/*Button style*/
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:5px;
+	border:2px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #ffffff;
+  
+  
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #e6e6e6 5%, #ffffff 100%);
+	background-color:#dbd6d6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
