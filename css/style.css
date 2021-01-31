@@ -81,10 +81,28 @@ footer, header, hgroup, menu, nav, section {
    
 }
 
+
+h2{
+  position: absolute;
+  margin-left: 38.2%;
+  top: 12.7%;  
+  
+}
 p{
   margin-top: 10px;
   margin-left: 37.5%;
   
+}
+p.instructions{
+  position: absolute;
+  margin-left: 1.2%;
+  bottom: 700px;
+  font-size: 36px;
+  font-family: URW Chancery L, cursive;
+}
+.instructions-body{
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .box{

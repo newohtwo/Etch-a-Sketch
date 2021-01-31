@@ -16,27 +16,35 @@
   <div  class = "container">
 
       <h1>
-        Etch a Sketch
+        Etch-a-Sketch
       </h1>
       
+      <div class = "main">
+        <h2 id = "drawingText">
+        </h2>
+        <div id = "cssGrid" class = "sketch-box">
+        </div>
+        <p class = "instructions">
+          instructions:
+          <span class = "instructions-body"><br>choose your desierd coloring method,<br>press once on the box to start drawing and again to stop.<br>hope you will have alot of fun <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">:D</a> </span>
+        </p>
         
-      
-      <div id = "cssGrid" class = "sketch-box">
-      </div>
+        <div class = slidecontainer>
+          
+          <input type="range" min="2" max="16" value="8" class="slider" id="myRange">
+          <p>Value: <span id="demo"></span>  <span id = "usedColoring"></span></p>
+          
+        </div>
 
+        <div class = "sketch-buttons">
 
-      <div class = slidecontainer>
-         
-        <input type="range" min="2" max="16" value="8" class="slider" id="myRange">
-        <p>Value: <span id="demo"></span></p>
-      </div>
-
-      <div class = "sketch-buttons">
-
-        <button type="button" id = "resetBtn" class = "myButton">Reset Square</button> 
-        <button type="button" id = "rndColorBtn" class = "myButton">Random Colors</button> 
-        
-        <input type="color" id="colorpicker" value="#0000ff"  class = "myButton"> </input>
+          <button type="button" id = "resetBtn" class = "myButton">Reset Square</button> 
+          <button type="button" id = "eraserBtn" class = "myButton">Eraser</button> 
+          <button type="button" id = "rndColorBtn" class = "myButton">Random Colors</button> 
+          
+          <input type="color" id="colorpicker" value="#0000ff"  class = "myButton"> </input>
+          
+        </div>
         
       </div>
   </div>

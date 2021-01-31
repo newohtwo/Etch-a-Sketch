@@ -4,7 +4,13 @@ let slider = document.getElementById("myRange");
 let currentGridSize = 0;
 let output,oldV;
 let clickFlag = false;
+let randomColorFlag = false;
 let colorUsed = "";
+let functionOfColorChoice;
+let drawingOrNotText = document.getElementById("drawingText");
+let usedColoringMethod ="nothing";
+
+//TODO add a way to show the user that he is drawing right now or not
 
 
 initButtons();
@@ -15,8 +21,11 @@ function startSketch(){
     slider.value = 2;
     createBoxes(2); 
     
-     output = document.getElementById("demo");
-    output.textContent = `2X2 Or 4 squares`;
+    output = document.getElementById("demo");
+    output.textContent = `2X2 Or 4 squares,`;
+    usedColoringMethod = document.getElementById("usedColoring");
+    usedColoringMethod.textContent = "not using a color method";
+
     
     currentGridSize = document.getElementById("cssGrid").childElementCount;
      oldV = 2;
@@ -24,25 +33,40 @@ function startSketch(){
 }
 
 
+
+//check if you need to draw or not
 document.addEventListener(`click`,function(e){
     if(e.target.classList.contains("box")){
+
+
         clickFlag = !clickFlag;
-        e.target.style.background=`${colorUsed}`;
+    
+        if(clickFlag){
+            drawingOrNotText.textContent = "Coloring";
+            drawingOrNotText.style = "color:green;"
+
+            if(randomColorFlag){
+                e.target.style.background=`${generateRndColor()}`;
+                
+            }else{
+                e.target.style.background=`${colorUsed}`;
+            }
+
+        }else{
+            drawingOrNotText.textContent = "Not coloring";
+            drawingOrNotText.style = "color:red;"
+        }
+
+
     }
     ;
 });
 
-/*
-//changes the box color 
-document.addEventListener('mouseover', function (e) {
-    let color = document.getElementById("colorpicker").value; 
-    colorUsed = color;
-    if (e.target.classList.contains("box") && clickFlag) {
-        e.target.style.background=`${color}`;
-        
-    } 
-});
-*/
+
+functionOfColorChoice;
+
+
+
 
 
  // slider , using old slider variable to know if he moved right or left
@@ -122,39 +146,70 @@ function restartBoxesAfterChange(){
 
     
 }
+
+
 //randomize the color choosen
 function rndColorBox(){
+    
     let color;
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
     color = `#${randomColor}`;
-    colorUsed = Math.floor(Math.random()*16777215).toString(16);
-
+    usedColoringMethod.textContent = "Using random color";
+    
+    
     document.addEventListener('mouseover', function (e) {
     if (e.target.classList.contains("box") && clickFlag) {
         e.target.style.background=`${color}`;
 
         randomColor = Math.floor(Math.random()*16777215).toString(16);
         color = `#${randomColor}`;
-        colorUsed = color;
-        console.log("color " + color);
+        usedColoringMethod.style = `color:${color};`;
+        
         } 
-
     });
+
+    randomColorFlag = true;
+    functionOfColorChoice = rndColorBox;
     
 
 }
+
+
 //color picker
-function colorPicker(){
+function singleColor(){
+usedColoringMethod.textContent = "Using single color";
+
 //changes the box color 
 document.addEventListener('mouseover', function (e) {
     let color = document.getElementById("colorpicker").value; 
+    usedColoringMethod.style = `color:${color};`;
+    colorUsed = color;
     if (e.target.classList.contains("box") && clickFlag) {
         e.target.style.background=`${color}`;
-        colorUsed = color;
+        
     } 
 });
+
+randomColorFlag = false;
+functionOfColorChoice = singleColor;
 }
 
+function eraseBox(){
+
+    //changes the box color 
+    usedColoringMethod.textContent = "Using Eraser!!";
+    usedColoringMethod.style = "color:#000000";
+    document.addEventListener('mouseover', function (e) {
+    colorUsed = "#ffffff";
+    if (e.target.classList.contains("box") && clickFlag) {
+        e.target.style.background='#ffffff';
+        
+    } 
+});
+
+randomColorFlag = false;
+functionOfColorChoice = eraseBox;
+}
 
 //initialize buttons
 function initButtons(){
@@ -166,10 +221,25 @@ function initButtons(){
     rndColorBtn.addEventListener('click', rndColorBox);
 
     const colorpicker = document.querySelector("#colorpicker");
-    colorpicker.addEventListener('click' , colorPicker);
+    colorpicker.addEventListener('click' , singleColor);
+
+    const eraser = document.querySelector("#eraserBtn");
+    eraser.addEventListener('click' , eraseBox);
 
     
 
+}
+
+
+
+
+
+
+
+function generateRndColor(){
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let color = `#${randomColor}`;
+    return color;
 }
 
 
